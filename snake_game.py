@@ -46,16 +46,17 @@ while game:
     if snake.head.distance(food) < 20:
         food.refresh()
         snake.add_seg()
-        scoreboard.changeScore()
+        scoreboard.increase_score()
 
     if check_collsion_bounds(snake.head) == True:
-        game = False
+        scoreboard.reset()
+        snake.reset()
 
     if snake.check_collison() == True:
-        game = False
+        scoreboard.reset()
+        snake.reset()
 
 
-scoreboard.GameOver()
 
 
 
